@@ -37,5 +37,41 @@ int main()
 {
     optimize();
 
+    int t;
+    cin >> t;
+
+    while (t--)
+    {
+        int n;
+        cin >> n;
+
+        string s;
+        cin >> s;
+
+        string tmp = s;
+
+        int cnt = 0;
+
+        sort(tmp.begin(), tmp.end());
+
+        if (s == tmp)
+        {
+            cout << 0 << endl;
+        }
+        else
+        {
+            char big;
+            for (int i = 0; i < n; i++)
+            {
+                if(s[i]>s[i+1]){
+                    big = s[i];
+                }
+            }
+
+            for (int i = 0; i < n;i++){
+                
+            }
+        }
+    }
     return 0;
 }

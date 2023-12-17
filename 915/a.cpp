@@ -36,6 +36,15 @@ using namespace std;
 int main()
 {
     optimize();
+    int t;
+    cin >> t;
+
+    while(t--){
+        int n, m;
+        cin >> n >> m;
+
+        cout << (n >= m ? n : m) << endl;
+    }
 
     return 0;
 }
