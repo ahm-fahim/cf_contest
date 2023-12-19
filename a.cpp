@@ -1,4 +1,6 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+
 using namespace std;
 
 int main()
@@ -8,28 +10,28 @@ int main()
 
     while (t--)
     {
-        string s;
-        cin >> s;
+        int n, k;
+        cin >> n >> k;
 
-        bool found = false;
-
-        for (int i = 1; i < s.size(); ++i)
+        vector<int> order;
+        for (int i = n; i >= 1; i--)
         {
-            string a = s.substr(0, i);
-            string b = s.substr(i);
-
-            if (a[0] != '0' && b[0] != '0' && stoi(b) > stoi(a))
+            if (k > 0)
             {
-                cout << a << " " << b << endl;
-                found = true;
-                break;
+                order.push_back(i);
+                k--;
+            }
+            else
+            {
+                order.push_back(n - i + 1);
             }
         }
 
-        if (!found)
+        for (int i : order)
         {
-            cout << "-1" << endl;
+            cout << i << " ";
         }
+        cout << endl;
     }
 
     return 0;
